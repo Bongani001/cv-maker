@@ -10,6 +10,15 @@ function WorkExperienceItem(props) {
     duty,
     duties} = props.experience;
     let handleWorkInput = props.handleWorkInput;
+
+    function DeleteBtn() {
+        return <button type="button" className="btn-delete-experience" onClick={handleDelete}>Delete</button>
+    }
+
+    function handleDelete(e) {
+        e.target.parentElement.remove();
+    }
+
     return (
       <div className="experience">
         <label htmlFor="position">
@@ -30,7 +39,7 @@ function WorkExperienceItem(props) {
         <label htmlFor="duty">
           <textarea id="duty" placeholder="Describe what are/were your duties" rows="2" value={duty} onChange={handleWorkInput} />
         </label>
-        <button type="button" className="btn-delete-experience">Delete</button>
+        {<DeleteBtn />}
       </div>
     );
   };
