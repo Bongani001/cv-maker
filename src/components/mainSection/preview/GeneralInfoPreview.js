@@ -8,7 +8,7 @@ function GeneralInfoPreview({generalInfo}) {
             <p>{generalInfo.mail}</p>
             <p>{generalInfo.phoneNumber}</p>
             <p>{generalInfo.address}</p>
-            <p>Emap</p>
+            <p>{generalInfo.description}</p>
         </div>
     )
 };
