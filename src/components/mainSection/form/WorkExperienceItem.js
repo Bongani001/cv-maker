@@ -1,18 +1,14 @@
 import React from "react";
 
 
-function WorkExperienceItem(props) {
+function WorkExperienceItem({experience, handleWorkInput,handleDeleteWork}) {
     let {position,
     company,
     city,
     from,
     to,
-    duty} = props.experience;
-    let handleWorkInput = props.handleWorkInput;
-
-    function handleDelete(e) {
-        e.target.parentElement.remove();
-    };
+    duty} = experience;
+    // let handleWorkInput = handleWorkInput;
 
     return (
       <div className="experience">
@@ -34,7 +30,7 @@ function WorkExperienceItem(props) {
         <label htmlFor="duty">
           <textarea id="duty" placeholder="Describe what are/were your duties" rows="2" value={duty} onChange={handleWorkInput} />
         </label>
-        <button type="button" className="btn-delete-experience" onClick={handleDelete}>Delete</button>
+        <button type="button" className="btn-delete-experience" onClick={handleDeleteWork}>Delete</button>
       </div>
     );
   };

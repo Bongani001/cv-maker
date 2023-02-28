@@ -1,13 +1,19 @@
 import React from "react";
 import GeneralInfoPreview from "./GeneralInfoPreview";
-import EducationPreview from "./EducationPreview";
+// import EducationPreview from "./EducationPreview";
 import WorkExperiencePreview from "./WorkExperincePreview";
 
-function CvPreview({generalInfo}) {
+function CvPreview({generalInfo, experience}) {
 
 
     return (
-        <GeneralInfoPreview generalInfo={generalInfo} />
+        <div>
+            <GeneralInfoPreview generalInfo={generalInfo} />
+            <p>{experience.position}</p>
+            {experience.duties.map((duty, index) => {
+                return <WorkExperiencePreview key={index} experience={experience} />
+            })}
+        </div>
     )
 }
 

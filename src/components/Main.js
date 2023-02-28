@@ -56,7 +56,12 @@ function Main() {
             duties: [...experience.duties, countWork]
           }
         })
-      } 
+      }
+
+
+    function handleDeleteWork(e) {
+        e.target.parentElement.remove();
+    };
 
     return (
         <main>
@@ -65,8 +70,9 @@ function Main() {
             handleGeneralInput={handleGeneralInput}
             experience={experience}
             handleWorkInput={handleWorkInput}
-            addWorkExperience={addWorkExperience} />
-            <CvPreview generalInfo={generalInfo} />
+            addWorkExperience={addWorkExperience}
+            handleDeleteWork={handleDeleteWork} />
+            <CvPreview generalInfo={generalInfo} experience={experience} />
         </main>
     )
 };
