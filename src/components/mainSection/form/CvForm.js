@@ -3,10 +3,10 @@ import GeneralInfo from "./GeneralInfo";
 import WorkExperience from "./WorkExperience";
 import EducationalExperience from "./EducationalExperience";
 
-function CvForm() {
+function CvForm({generalInfo, handleGeneralInput}) {
     return (
         <form>
-            <GeneralInfo />
+            <GeneralInfo generalInfo={generalInfo} handleGeneralInput={handleGeneralInput} />
             <WorkExperience />
             <EducationalExperience />
         </form>

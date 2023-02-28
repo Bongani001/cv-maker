@@ -1,25 +1,6 @@
 import React, { useState } from "react";
 
-function GeneralInfo() {
-  const [generalInfo, setGeneralInfo] = useState({
-    firstName: "",
-    lastName: "",
-    tittle: "",
-    mail: "",
-    phoneNumber: "",
-    address: "",
-    description: ""
-  });
-
-  function handleGeneralInput(e) {
-    setGeneralInfo(prevState => {
-      return {
-        ...prevState,
-        [e.target.id]: e.target.value,
-      };
-    });
-  };
-
+function GeneralInfo({generalInfo, handleGeneralInput}) {
   return (
       <fieldset>
         <h2 className="section-heading">General Information</h2>
@@ -40,7 +21,7 @@ function GeneralInfo() {
             <input type="text" id="phoneNumber" placeholder="Phone Number" value={generalInfo.phoneNumber} onChange={handleGeneralInput} />
           </label>
           <label htmlFor="address">
-            <input type="text" id="address" placeholder="Address" />
+            <input type="text" id="address" placeholder="Address" value={generalInfo.address} onChange={handleGeneralInput} />
           </label>
           <label htmlFor="description">
             <textarea id="description" placeholder="About yourself" value={generalInfo.description} onChange={handleGeneralInput} />
@@ -49,11 +30,5 @@ function GeneralInfo() {
       </fieldset>
   )
 }
-
-/* <div className="general-info">
-    <h1>{props.generalInfo.firstName} {props.generalInfo.lastName}</h1>
-    <p className="tittle">{props.generalInfo.tittle}</p>
-    <p>{props.generalInfo.phoneNumber}</p>
-</div> */
 
 export default GeneralInfo;
