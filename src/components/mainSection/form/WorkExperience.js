@@ -32,17 +32,15 @@ function WorkExperience() {
             duties: [...experience.duties, count]
           }
         })
-      }
-
-      const edu = experience.duties.map((duty, index) => {
-        return <WorkExperienceItem key={index} experience={experience} handleWorkInput={handleWorkInput} />
-      })
+      } 
 
     return (
         <fieldset>
           <h2 className="section-heading">Experience</h2>
           {
-            edu
+          experience.duties.map((duty, index) => {
+            return <WorkExperienceItem key={index} experience={experience} handleWorkInput={handleWorkInput} />
+          })
           }
           <button type="button" className="btn-add-experience" onClick={addWorkExperience} >Add Work Experience</button>
         </fieldset>

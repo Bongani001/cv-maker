@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import EducationalExperienceItem from "./EducationalExperienceItem";
 
 function EducationalExperience() {
     const [education, setEducation] = useState({
         qualification: "",
         institution: "",
         city: "",
-        obtained: ""
+        obtained: "",
+        qualificationNumbers: [0]
     })
 
     function handleEducationWorkInput(e) {
@@ -17,25 +19,27 @@ function EducationalExperience() {
         });
       };
 
+      let count = 0;
+      function addEducationalExperience() {
+        count += education.qualificationNumbers.length;
+        setEducation(prevState => {
+          return {
+            ...prevState,
+            id: education.qualificationNumbers.length,
+            qualificationNumbers: [...education.qualificationNumbers, count]
+          }
+        })
+      } 
+
     return (
         <fieldset>
             <h2 className="section-heading">Education</h2>
-            <div className="education">
-                <label htmlFor="qualification">
-                    <input type="text" id="qualification" placeholder="Qualification" value={education.qualification} onChange={handleEducationWorkInput} />
-                </label>
-                <label htmlFor="institution">
-                    <input type="text" id="institution" placeholder="Institution" value={education.institution} onChange={handleEducationWorkInput} />
-                </label>
-                <label htmlFor="city">
-                    <input type="text" id="city" placeholder="City" value={education.city} onChange={handleEducationWorkInput} />
-                </label>
-                <label htmlFor="obtained">
-                    <input type="text" id="obtained" placeholder="Date Obtained" value={education.obtained} onChange={handleEducationWorkInput} />
-                </label>
-                <button type="button" className="btn-delete-education">Delete</button>
-            </div>
-            <button type="button" className="btn-add-education">Add Education</button>
+            {education.qualificationNumbers.map((num, index) => {
+                return (
+                    <EducationalExperienceItem key={index} education={education} handleEducationWorkInput={handleEducationWorkInput} />
+                )
+            })}
+            <button type="button" className="btn-add-education" onClick={addEducationalExperience}>Add Education</button>
         </fieldset>
     )
 };
