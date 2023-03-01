@@ -1,7 +1,7 @@
 import React from "react";
 import GeneralInfo from "./GeneralInfo";
 import WorkExperience from "./WorkExperience";
-// import EducationalExperience from "./EducationalExperience";
+import Education from "./Education";
 
 function CvForm({
     generalInfo,
@@ -9,7 +9,11 @@ function CvForm({
     experience,
     handleWorkInput,
     addWorkExperience,
-    handleDeleteWork
+    handleDeleteWork,
+    education,
+    handleEducationInput,
+    addEducation,
+    handleDeleteEducation
     }) {
     return (
         <form>
@@ -20,7 +24,11 @@ function CvForm({
             handleWorkInput={handleWorkInput}
             addWorkExperience={addWorkExperience}
             handleDeleteWork={handleDeleteWork} />
-            {/* <EducationalExperience /> */}
+            <Education 
+            education={education}
+            handleEducationInput={handleEducationInput}
+            addEducation={addEducation}
+            handleDeleteEducation={handleDeleteEducation} />
         </form>
     )
 };

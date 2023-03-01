@@ -30,7 +30,7 @@ function WorkExperienceItem({id, experience, handleWorkInput,handleDeleteWork}) 
         <label htmlFor="duty">
           <textarea name="duty" placeholder="Describe what are/were your duties" rows="2" value={duty} onChange={(e) => handleWorkInput(e, id)} />
         </label>
-        <button type="button" className="btn-delete-experience" onClick={handleDeleteWork}>Delete</button>
+        <button type="button" className="btn-delete-experience" onClick={(e) => handleDeleteWork(id)}>Delete</button>
       </div>
     );
   };
