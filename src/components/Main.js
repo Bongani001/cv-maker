@@ -24,7 +24,7 @@ function Main() {
       };
 
     /*******************
-    WORK EXPERIENCE SYNTAX
+    WORK EXPERIENCE
     **********************/
 
     const [experience, setExperience] = useState([{
@@ -45,32 +45,73 @@ function Main() {
           return item;
         })
         setExperience([...newExperience]);
-        console.log('yes')
       };
 
       
-      let countWork = 0;
       function addWorkExperience() {
-        countWork += experience.duties.length;
         setExperience(prevState => {
-          return {
-            ...prevState,
-            id: experience.duties.length,
-            duties: [...experience.duties, countWork]
+          return [
+          ...prevState,
+          {
+          id: uniqid(),
+          position: "",
+          company: "",
+          city: "",
+          from: "",
+          to: "",
+          duty: ""
+        }
+        ]})
+      };
+
+    function handleDeleteWork(id) {
+      const newExperience = experience.filter(item => {
+        return item.id !== id
+      })
+      setExperience([...newExperience])
+    };
+
+    /*******************
+    EDUCATION
+    **********************/
+
+    const [education, setEducation] = useState([{
+      id: uniqid(),
+      qualification: "",
+      institution: "",
+      city: "",
+      obtained: ""
+    }])
+
+    function handleEducationInput(e, id) {
+          const newEducation = education.map(item => {
+            if (item.id === id) {
+              return {...item, [e.target.name]: e.target.value}
+            }
+            return item
+          })
+          setEducation([...newEducation]);
+    };
+
+    function addEducation() {
+      setEducation(prevState => {
+        return [
+          ...prevState,
+          {
+          id: uniqid(),
+          qualification: "",
+          institution: "",
+          city: "",
+          obtained: ""
           }
-        })
-      }
+        ]})
+    };
 
-
-    function handleDeleteWork(e) {
-        e.target.parentElement.remove();
-        // countWork -= experience.duties.length;
-        // setExperience(prevState => {
-        //     return {
-        //       ...prevState,
-        //       duties: experience.duties.splice(0, 1)
-        //     }
-        //   })
+    function handleDeleteEducation(id) {
+      const newEducation = education.filter(item => {
+        return item.id !== id
+      })
+      setEducation([...newEducation])
     };
 
     return (
@@ -81,8 +122,12 @@ function Main() {
             experience={experience}
             handleWorkInput={handleWorkInput}
             addWorkExperience={addWorkExperience}
-            handleDeleteWork={handleDeleteWork} />
-            <CvPreview generalInfo={generalInfo} experience={experience} />
+            handleDeleteWork={handleDeleteWork}
+            education={education}
+            handleEducationInput={handleEducationInput}
+            addEducation={addEducation}
+            handleDeleteEducation={handleDeleteEducation} />
+            <CvPreview generalInfo={generalInfo} experience={experience} education={education} />
         </main>
     )
 };
