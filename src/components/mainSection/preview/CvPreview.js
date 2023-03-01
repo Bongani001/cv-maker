@@ -10,9 +10,11 @@ function CvPreview({generalInfo, experience}) {
         <div>
             <GeneralInfoPreview generalInfo={generalInfo} />
             <p>{experience.position}</p>
-            {experience.duties.map((duty, index) => {
-                return <WorkExperiencePreview key={index} experience={experience} />
+            <div>
+            {experience.map(item => {
+                return <WorkExperiencePreview id={item.id} key={item.id} item={item} />
             })}
+            </div>
         </div>
     )
 }

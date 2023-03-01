@@ -1,24 +1,23 @@
 import React from "react";
 
-function WorkExperiencePreview(experience) {
+function WorkExperiencePreview({item}) {
     // const {position,
     // company,
     // city,
     // from,
     // to,
     // duty,
-    // duties} = experience
+    // duties} = item
     return (
         <div className="work-experience">
             <h2>Employment</h2>
-            {experience.city}
-            <p>{experience.position}</p>
-            <p>{experience.company}</p>
-            <p>{experience.city}</p>
-            <p>{experience.from}</p>
-            <p>{experience.to}</p>
-            <p>{experience.duty}</p>
-            <p>{experience.duties}</p>
+            {item.city}
+            <p>{item.position}</p>
+            <p>{item.company}</p>
+            <p>{item.city}</p>
+            <p>{item.from}</p>
+            <p>{item.to}</p>
+            <p>{item.duty}</p>
         </div>
     )
 };

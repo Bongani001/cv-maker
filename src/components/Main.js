@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import uniqid from "uniqid";
 import CvForm from "./mainSection/form/CvForm";
 import CvPreview from "./mainSection/preview/CvPreview";
 
@@ -26,23 +27,25 @@ function Main() {
     WORK EXPERIENCE SYNTAX
     **********************/
 
-    const [experience, setExperience] = useState({
+    const [experience, setExperience] = useState([{
+        id: uniqid(),
         position: "",
         company: "",
         city: "",
         from: "",
         to: "",
         duty: "",
-        duties: [0]
-      });
+      }]);
 
-      function handleWorkInput(e) {
-        setExperience(prevState => {
-          return {
-            ...prevState,
-            [e.target.id]: e.target.value,
-          };
-        });
+      function handleWorkInput(e, id) {
+        const newExperience = experience.map(item => {
+          if (item.id === id) {
+            return {...item, [e.target.name]: e.target.value}
+          }
+          return item;
+        })
+        setExperience([...newExperience]);
+        console.log('yes')
       };
 
       
@@ -61,6 +64,13 @@ function Main() {
 
     function handleDeleteWork(e) {
         e.target.parentElement.remove();
+        // countWork -= experience.duties.length;
+        // setExperience(prevState => {
+        //     return {
+        //       ...prevState,
+        //       duties: experience.duties.splice(0, 1)
+        //     }
+        //   })
     };
 
     return (
