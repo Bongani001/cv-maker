@@ -62,7 +62,17 @@ fieldset > h2 {
     /* color: var(--secondary); */
 }
 
-.general-information,
+.general-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+label:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .experience,
 .education {
     display: flex;

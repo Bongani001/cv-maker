@@ -6,7 +6,7 @@ import CvPreview from "./mainSection/preview/CvPreview";
 
 function Main() {
     const [generalInfo, setGeneralInfo] = useState({
-        firstName: "Boy",
+        firstName: "",
         lastName: "",
         tittle: "",
         mail: "",
