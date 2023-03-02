@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/main.css"
 import uniqid from "uniqid";
 import CvForm from "./mainSection/form/CvForm";
 import CvPreview from "./mainSection/preview/CvPreview";
@@ -115,7 +116,7 @@ function Main() {
     };
 
     return (
-        <main>
+        <main className="content">
             <CvForm 
             generalInfo={generalInfo}
             handleGeneralInput={handleGeneralInput}

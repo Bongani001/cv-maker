@@ -24,7 +24,7 @@ function GeneralInfo({generalInfo, handleGeneralInput}) {
             <input type="text" id="address" placeholder="Address" value={generalInfo.address} onChange={handleGeneralInput} />
           </label>
           <label htmlFor="description">
-            <textarea id="description" placeholder="About yourself" value={generalInfo.description} onChange={handleGeneralInput} />
+            <textarea id="description" placeholder="About yourself" rows="3" value={generalInfo.description} onChange={handleGeneralInput} />
           </label>
         </div>
       </fieldset>

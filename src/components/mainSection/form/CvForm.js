@@ -16,7 +16,7 @@ function CvForm({
     handleDeleteEducation
     }) {
     return (
-        <form>
+        <form className="cv-form">
             <GeneralInfo 
             generalInfo={generalInfo} handleGeneralInput={handleGeneralInput} />
             <WorkExperience 
