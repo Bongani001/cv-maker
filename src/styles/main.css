@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #101820FF;
+    --secondary: #999999;
+    --secondary2: #888888;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    margin: 0px;
+}
+
+.cv-form {
+    margin-top: 10px;
+    width: 80%;
+    background-color: var(--secondary2);
+    border-radius: 10px;
+}
+
+label {
+    /* width: 100%; */
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+}
+
+fieldset > h2 {
+    padding: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* color: var(--secondary); */
+}
+
+.general-information,
+.experience,
+.education {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.btn-delete-experience,
+.btn-delete-education,
+.btn-add-experience,
+.btn-add-education {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: var(--secondary);
+}
+
+.btn-delete-experience:hover,
+.btn-delete-education:hover,
+.btn-add-experience:hover,
+.btn-add-education:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+}
