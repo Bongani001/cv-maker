@@ -4,10 +4,10 @@
 }
 
 .cv-preview {
-    background-color: blue;
     width: 793px;
     height: 1122px;
     margin-top: 50px;
+    margin-bottom: 150px;
 }
 
 .general-info {
@@ -30,4 +30,9 @@
 
 .contact > p > img {
     width: 20px;
+}
+
+.preview-content {
+    background-color: white;
+    height: 100%;
 }

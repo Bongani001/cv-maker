@@ -1,0 +1,13 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #101820FF;
+    --secondary: #FEE715FF;
+}
+
+.copyright {
+    background-color: var(--primary);
+}

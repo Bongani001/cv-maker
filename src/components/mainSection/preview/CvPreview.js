@@ -8,12 +8,17 @@ function CvPreview({generalInfo, experience, education}) {
     return (
         <div className="cv-preview">
             <GeneralInfoPreview generalInfo={generalInfo} />
-            {experience.map(item => {
-                return <WorkExperiencePreview id={item.id} key={item.id} item={item} />
-            })}
-            {education.map(item => {
-                return <EducationPreview id={item.id} key={item.id} item={item} />
-            })}
+            <div className="preview-content">
+                <div className="experience-education">
+                    {experience.map(item => {
+                        return <WorkExperiencePreview id={item.id} key={item.id} item={item} />
+                    })}
+                    {education.map(item => {
+                        return <EducationPreview id={item.id} key={item.id} item={item} />
+                    })}
+                </div>
+                <div className="sidebar"></div>
+            </div>
         </div>
     )
 }
