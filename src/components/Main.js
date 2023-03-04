@@ -14,15 +14,43 @@ function Main() {
         address: "",
         description: ""
       });
+
+    const generalInfoExample = {
+      firstName: "Kevin",
+      lastName: "Johnson",
+      tittle: "Software Engineer",
+      mail: "kelvinjohnson@gmail.com",
+      phoneNumber: "0874521568",
+      address: "107 King Street, Johannesburg, South Africa, 9660",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque purus nisl, mattis nec felis eget, semper rutrum diam. Vestibulum sollicitudin nunc ut lectus fermentum, at maximus metus interdum. Integer hendrerit nisl id dui scelerisque posuere. Nam at tellus nec odio hendrerit finibus. Cras bibendum risus et felis posuere aliquam."
+    };
+
+    const experienceExample = [{
+      id: uniqid(),
+      position: "Software Engineer",
+      company: "Naso Works",
+      city: "Dubai",
+      from: "June 2020",
+      to: "Dec 2022",
+      duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
+    }];
+
+    const educationExperience = [{
+      id: uniqid(),
+      qualification: "Bachelor of Science in Computer Science",
+      institution: "University of Johannesburg",
+      city: "Johannesburg",
+      obtained: "2015"
+    }];
     
-      function handleGeneralInput(e) {
-        setGeneralInfo(prevState => {
-          return {
-            ...prevState,
-            [e.target.id]: e.target.value,
-          };
-        });
-      };
+    function handleGeneralInput(e) {
+      setGeneralInfo(prevState => {
+        return {
+          ...prevState,
+          [e.target.id]: e.target.value,
+        };
+      });
+    };
 
     /*******************
     WORK EXPERIENCE
@@ -38,32 +66,32 @@ function Main() {
         duty: "",
       }]);
 
-      function handleWorkInput(e, id) {
-        const newExperience = experience.map(item => {
-          if (item.id === id) {
-            return {...item, [e.target.name]: e.target.value}
-          }
-          return item;
-        })
-        setExperience([...newExperience]);
-      };
-
-      
-      function addWorkExperience() {
-        setExperience(prevState => {
-          return [
-          ...prevState,
-          {
-          id: uniqid(),
-          position: "",
-          company: "",
-          city: "",
-          from: "",
-          to: "",
-          duty: ""
+    function handleWorkInput(e, id) {
+      const newExperience = experience.map(item => {
+        if (item.id === id) {
+          return {...item, [e.target.name]: e.target.value}
         }
-        ]})
-      };
+        return item;
+      })
+      setExperience([...newExperience]);
+    };
+
+    
+    function addWorkExperience() {
+      setExperience(prevState => {
+        return [
+        ...prevState,
+        {
+        id: uniqid(),
+        position: "",
+        company: "",
+        city: "",
+        from: "",
+        to: "",
+        duty: ""
+      }
+      ]})
+    };
 
     function handleDeleteWork(id) {
       const newExperience = experience.filter(item => {
@@ -115,6 +143,14 @@ function Main() {
       setEducation([...newEducation])
     };
 
+    function loadExample() {
+      setGeneralInfo(generalInfoExample);
+      setExperience(experienceExample)
+      setEducation(educationExperience)
+    };
+
+    
+
     return (
         <main className="content">
             <CvForm 
@@ -127,7 +163,8 @@ function Main() {
             education={education}
             handleEducationInput={handleEducationInput}
             addEducation={addEducation}
-            handleDeleteEducation={handleDeleteEducation} />
+            handleDeleteEducation={handleDeleteEducation}
+            loadExample={loadExample} />
             <CvPreview generalInfo={generalInfo} experience={experience} education={education} />
         </main>
     )

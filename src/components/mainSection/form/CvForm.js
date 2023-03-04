@@ -13,9 +13,11 @@ function CvForm({
     education,
     handleEducationInput,
     addEducation,
-    handleDeleteEducation
+    handleDeleteEducation,
+    loadExample
     }) {
     return (
+        <>
         <form className="cv-form">
             <GeneralInfo 
             generalInfo={generalInfo} handleGeneralInput={handleGeneralInput} />
@@ -30,6 +32,8 @@ function CvForm({
             addEducation={addEducation}
             handleDeleteEducation={handleDeleteEducation} />
         </form>
+        <button type="button" onClick={loadExample}>Example</button>
+        </>
     )
 };
 

@@ -1,11 +1,12 @@
 import React from "react";
+import "../../../styles/cv.css";
 import GeneralInfoPreview from "./GeneralInfoPreview";
 import EducationPreview from "./EducationPreview";
 import WorkExperiencePreview from "./WorkExperincePreview";
 
 function CvPreview({generalInfo, experience, education}) {
     return (
-        <div>
+        <div className="cv-preview">
             <GeneralInfoPreview generalInfo={generalInfo} />
             {experience.map(item => {
                 return <WorkExperiencePreview id={item.id} key={item.id} item={item} />

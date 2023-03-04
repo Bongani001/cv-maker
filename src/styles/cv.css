@@ -1,0 +1,33 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.cv-preview {
+    background-color: blue;
+    width: 793px;
+    height: 1122px;
+    margin-top: 50px;
+}
+
+.general-info {
+    background-color: var(--primary);
+    padding: 15px;
+    color: white;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact > p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact > p > img {
+    width: 20px;
+}
