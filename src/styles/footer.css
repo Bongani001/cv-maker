@@ -3,11 +3,13 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #101820FF;
-    --secondary: #FEE715FF;
-}
-
 .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
     background-color: var(--primary);
+    color: white;
+    /* margin-top: 50px; */
 }
