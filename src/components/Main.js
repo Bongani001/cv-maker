@@ -33,6 +33,15 @@ function Main() {
       from: "June 2020",
       to: "Dec 2022",
       duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
+    }, {
+      id: uniqid(),
+      position: "Software Engineer",
+      company: "Naso Works",
+      city: "Dubai",
+      from: "June 2020",
+      to: "Dec 2022",
+      duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
+
     }];
 
     const educationExperience = [{
