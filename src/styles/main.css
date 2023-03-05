@@ -33,10 +33,6 @@ FORM
     border-radius: 10px;
 }
 
-label {
-    /* width: 100%; */
-}
-
 input,
 textarea {
     width: 100%;
@@ -99,4 +95,16 @@ label:last-child {
     cursor: pointer;
     background-color: var(--primary);
     color: white;
+}
+
+.cv-example {
+    border: none;
+    border-radius: 5px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.cv-example:hover {
+    background-color: var(--secondary2);
+    cursor: pointer;
 }
