@@ -28,7 +28,7 @@ function CvPreview({generalInfo, experience, education}) {
                         })}
                     </div>
                 </div>
-                <div className="sidebar">sidebar</div>
+                {/* <div className="sidebar"></div> */}
             </div>
         </div>
     )

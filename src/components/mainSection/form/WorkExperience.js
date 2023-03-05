@@ -16,7 +16,7 @@ function WorkExperience({
         return <WorkExperienceItem
         id={item.id}
         key={item.id}
-        experience={experience}
+        item={experience}
         handleWorkInput={handleWorkInput}
         handleDeleteWork={handleDeleteWork} />
       })

@@ -1,13 +1,13 @@
 import React from "react";
 
 
-function WorkExperienceItem({id, experience, handleWorkInput,handleDeleteWork}) {
+function WorkExperienceItem({id, item, handleWorkInput,handleDeleteWork}) {
     let {position,
     company,
     city,
     from,
     to,
-    duty} = experience;
+    duty} = item;
     // let handleWorkInput = handleWorkInput;
 
     return (

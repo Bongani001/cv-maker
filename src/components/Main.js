@@ -30,26 +30,48 @@ function Main() {
       position: "Software Engineer",
       company: "Naso Works",
       city: "Dubai",
-      from: "June 2020",
-      to: "Dec 2022",
+      from: "June 2021",
+      to: "Present",
       duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
     }, {
       id: uniqid(),
       position: "Software Engineer",
       company: "Naso Works",
       city: "Dubai",
-      from: "June 2020",
-      to: "Dec 2022",
+      from: "Jan 2019",
+      to: "June 2021",
+      duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
+    }, {
+      id: uniqid(),
+      position: "Software Developer",
+      company: "Cool Tech",
+      city: "Pretori",
+      from: "June 2016",
+      to: "Dec 2018",
+      duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
+    }, {
+      id: uniqid(),
+      position: "Software Developer | Intern",
+      company: "Cool Tech",
+      city: "Pretori",
+      from: "Feb 2016",
+      to: "June 2016",
       duty: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ornare risus, sit amet feugiat est gravida eget. Proin sem massa, vulputate eu hendrerit cursus, dapibus vitae justo. Donec euismod bibendum eros, at sagittis lectus feugiat vel. Nullam sodales, mi in bibendum viverra, nunc elit porttitor ante, in elementum sapien dolor et augue. Nunc posuere lorem ac ligula porttitor fringilla. Integer vitae tellus feugiat, vehicula tellus ac, tincidunt nulla.",
 
     }];
 
     const educationExperience = [{
       id: uniqid(),
+      qualification: "Honours in Computer Science",
+      institution: "University of Cape Town",
+      city: "Cape Town",
+      obtained: "2015"
+    }, {
+      id: uniqid(),
       qualification: "Bachelor of Science in Computer Science",
       institution: "University of Johannesburg",
       city: "Johannesburg",
-      obtained: "2015"
+      obtained: "2014"
     }];
     
     function handleGeneralInput(e) {
